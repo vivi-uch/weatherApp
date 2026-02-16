@@ -1,9 +1,9 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import "tailwindcss";
 
 /* https://api.open-meteo.com/v1/forecast */
 
-@theme {
+:root {
   /* Define Neutral Palette */
   --color-neutral-900: hsl(243, 96%, 9%);
   --color-neutral-800: hsl(243, 27%, 20%);
