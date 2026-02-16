@@ -30,21 +30,25 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-   const getWeatherFunction = async () => {
-    try {
-      const data = await getWeather(location.latitude, location.longitude, units);
-      setWeather(data);
-    } catch {
-      setError("Something went wrong");
-    } finally {
-      setLoading(false);
-    }
-  };
+    
+    const getWeatherFunction = async () => {
+      try {
+   
+        const data = await getWeather(
+          location.latitude,
+          location.longitude,
+          units,
+        );
+        setWeather(data);
+      } catch {
+        setError("Something went wrong");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  getWeatherFunction();
-
+    getWeatherFunction();
   }, [location, units]);
-
 
   //   useEffect(() => {
   //   setLoading(true);
