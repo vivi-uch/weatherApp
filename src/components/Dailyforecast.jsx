@@ -7,11 +7,11 @@ export default function DailyForecast({ weather }) {
       <h3 className="text-lg font-semibold text-white mt-16 mb-4">
         Daily forecast
       </h3>
-      <div className="grid grid-cols-3 sm:grid-cols-7 gap-4 ">
+      <div className="grid grid-cols-3 sm:grid-cols-7 gap-3 sm:gap-4 ">
         {daily.time.map((date, i) => (
           <div
             key={date}
-            className=" w-20 sm:w-24 bg-neutral-800 rounded-xl p-4 border border-neutral-700/50 text-center"
+            className=" w-26 sm:w-24 bg-neutral-800 rounded-xl p-4 border border-neutral-700/50 text-center"
           >
             <p className="text-white text-sm font-medium">
               {new Date(date).toLocaleDateString(undefined, {

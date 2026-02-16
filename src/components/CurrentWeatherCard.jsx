@@ -7,10 +7,10 @@ export default function CurrentWeatherCard({ location, weather }) {
 
   return (
     <div
-      className="relative rounded-2xl shadow-xl py-22 px-6 bg-cover"
+      className="relative rounded-2xl shadow-xl py-12 sm:py-22 px-4 sm:px-6 bg-cover"
       style={{ backgroundImage: `url(${bgTodaysm})` }}
     >
-      <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+      <div className="relative flex flex-col sm:flex-row items-center sm:justify-between gap-6">
         <div>
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             {location.name}, {location.country}

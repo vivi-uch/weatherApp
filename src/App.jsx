@@ -30,14 +30,31 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    setError(null);
+   const getWeatherFunction = async () => {
+    try {
+      const data = await getWeather(location.latitude, location.longitude, units);
+      setWeather(data);
+    } catch {
+      setError("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    getWeather(location.latitude, location.longitude, units)
-      .then((data) => setWeather(data))
-      .catch(() => setError("Something went wrong"))
-      .finally(() => setLoading(false));
+  getWeatherFunction();
+
   }, [location, units]);
+
+
+  //   useEffect(() => {
+  //   setLoading(true);
+  //   setError(null);
+
+  //   getWeather(location.latitude, location.longitude, units)
+  //     .then((data) => setWeather(data))
+  //     .catch(() => setError("Something went wrong"))
+  //     .finally(() => setLoading(false));
+  // }, [location, units]);
 
   return (
     <div className="min-h-screen bg-[#1a1e31] text-white">
