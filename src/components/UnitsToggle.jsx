@@ -1,80 +1,38 @@
-import { useState } from "react";
-
-export default function UnitsToggle({ setUnits }) {
-  const [open, setOpen] = useState(false);
-
-  function updateUnit(type, value) {
-    setUnits((prev) => ({
-      ...prev,
-      [type]: value,
-    }));
+export default function UnitsToggle({ units, setUnits }) {
+  function handleChange(type, value) {
+    setUnits((prev) => ({ ...prev, [type]: value }));
   }
 
   return (
-    <div className="absolute top-6 right-6">
-      <button
-        onClick={() => setOpen(!open)}
-        className="bg-neutral-800 px-4 py-2 rounded-lg"
-      >
-        Units
-      </button>
+    <div className="flex items-center sm:gap-2">
+      <span className="text-neutral-400 text-sm hidden sm:inline"> Units</span>
 
-      {open && (
-        <div className="mt-2 w-64 bg-neutral-800 p-4 rounded-xl space-y-4">
-          
-          {/* Temperature */}
-          <div>
-            <p className="text-sm text-neutral-400 mb-2">Temperature</p>
-            <button
-              onClick={() => updateUnit("temperature", "celsius")}
-              className="block w-full text-left p-2 hover:bg-neutral-700 rounded"
-            >
-              Celsius (°C)
-            </button>
-            <button
-              onClick={() => updateUnit("temperature", "fahrenheit")}
-              className="block w-full text-left p-2 hover:bg-neutral-700 rounded"
-            >
-              Fahrenheit (°F)
-            </button>
-          </div>
-
-          {/* Wind */}
-          <div>
-            <p className="text-sm text-neutral-400 mb-2">Wind Speed</p>
-            <button
-              onClick={() => updateUnit("wind", "kmh")}
-              className="block w-full text-left p-2 hover:bg-neutral-700 rounded"
-            >
-              km/h
-            </button>
-            <button
-              onClick={() => updateUnit("wind", "mph")}
-              className="block w-full text-left p-2 hover:bg-neutral-700 rounded"
-            >
-              mph
-            </button>
-          </div>
-
-          {/* Precipitation */}
-          <div>
-            <p className="text-sm text-neutral-400 mb-2">Precipitation</p>
-            <button
-              onClick={() => updateUnit("precipitation", "mm")}
-              className="block w-full text-left p-2 hover:bg-neutral-700 rounded"
-            >
-              Millimeters (mm)
-            </button>
-            <button
-              onClick={() => updateUnit("precipitation", "inch")}
-              className="block w-full text-left p-2 hover:bg-neutral-700 rounded"
-            >
-              Inches
-            </button>
-          </div>
-
-        </div>
-      )}
+      <div className="flex flex-1 gap-4">
+        <select
+          value={units.temperature}
+          onChange={(e) => handleChange("temperature", e.target.value)}
+          className="bg-neutral-800 text-neutral-0 text-sm px-1 py-1 rounded-lg border border-neutral-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer"
+        >
+          <option value="celsius">°C</option>
+          <option value="fahrenheit">°F</option>
+        </select>
+        <select
+          value={units.wind}
+          onChange={(e) => handleChange("wind", e.target.value)}
+          className="bg-neutral-800 text-neutral-0 text-sm px-1 py-1 rounded-lg border border-neutral-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer"
+        >
+          <option value="kmh">km/h</option>
+          <option value="mph">mph</option>
+        </select>
+        <select
+          value={units.precipitation}
+          onChange={(e) => handleChange("precipitation", e.target.value)}
+          className="bg-neutral-800 text-neutral-0 text-sm px-1 py-1 rounded-lg border border-neutral-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer"
+        >
+          <option value="mm">mm</option>
+          <option value="inch">inch</option>
+        </select>
+      </div>
     </div>
   );
 }

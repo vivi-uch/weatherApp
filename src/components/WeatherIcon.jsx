@@ -5,7 +5,7 @@ import snow from "../assets/icon-snow.webp";
 import overcast from "../assets/icon-overcast.webp";
 import partly from "../assets/icon-partly-cloudy.webp";
 
-export default function WeatherIcon({ code, size = "w-10 h-10" }) {
+export default function WeatherIcon({ code }) {
   let src = sunny;
 
   if (code >= 1 && code <= 3) src = partly;
@@ -14,5 +14,5 @@ export default function WeatherIcon({ code, size = "w-10 h-10" }) {
   else if (code >= 71 && code <= 86) src = snow;
   else if (code > 3) src = overcast;
 
-  return <img src={src} className={size} alt="weather icon" />;
+  return <img src={src} className="w-10 h-10" alt="weather icon" />;
 }
