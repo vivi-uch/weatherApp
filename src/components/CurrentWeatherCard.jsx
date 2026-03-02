@@ -2,8 +2,13 @@ import WeatherIcon from "./WeatherIcon";
 // import bgTodaylg from "../assets/bg-today-large.svg";
 import bgTodaysm from "../assets/bg-today-small.svg";
 
+// import {format} from "date-fns";
+//this is imported after npm install date-fns
+
 export default function CurrentWeatherCard({ location, weather }) {
   const current = weather.current;
+  const today = new Date();
+  // const formattedDate = format(today, "EEEE do MMM, yyyy");
 
   return (
     <div
@@ -15,7 +20,7 @@ export default function CurrentWeatherCard({ location, weather }) {
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             {location.name}, {location.country}
           </h2>
-          <p className="text-neutral-400 text-sm mt-1">Monnday, Feb 16, 2026</p>
+          {/* <p className="text-neutral-400 text-sm mt-1">{formattedDate}</p> */}
         </div>
 
         <div className="flex items-center gap-4 sm:gap-6">
