@@ -30,10 +30,8 @@ export default function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    
     const getWeatherFunction = async () => {
       try {
-   
         const data = await getWeather(
           location.latitude,
           location.longitude,

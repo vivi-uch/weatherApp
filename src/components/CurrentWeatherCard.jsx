@@ -20,7 +20,7 @@ export default function CurrentWeatherCard({ location, weather }) {
           <h2 className="text-xl sm:text-2xl font-bold text-white">
             {location.name}, {location.country}
           </h2>
-          {/* <p className="text-neutral-400 text-sm mt-1">{formattedDate}</p> */}
+          <p className="text-neutral-400 text-sm mt-1">{today.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</p>
         </div>
 
         <div className="flex items-center gap-4 sm:gap-6">
