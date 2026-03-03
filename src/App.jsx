@@ -6,10 +6,9 @@ import UnitsToggle from "./components/UnitsToggle";
 import CurrentWeatherCard from "./components/CurrentWeatherCard";
 import WeatherDetailsGrid from "./components/WeatherDetailsGrid";
 import HourlyForecast from "./components/HourlyForecast";
-// import DailyForecast from "./components/DailyForecast";
+import DailyForecast from "./components/DailyForecast";
 import weatherLogo from "./assets/logo.svg";
 import loadingImage from "./assets/icon-loading.svg";
-import DailyForecast from "./components/DailyForecast";
 
 export default function App() {
   const [location, setLocation] = useState({
