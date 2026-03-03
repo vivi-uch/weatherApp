@@ -9,6 +9,7 @@ import HourlyForecast from "./components/HourlyForecast";
 import DailyForecast from "./components/DailyForecast";
 import weatherLogo from "./assets/logo.svg";
 import loadingImage from "./assets/icon-loading.svg";
+import Dailyforecast from "./components/Dailyforecast";
 
 export default function App() {
   const [location, setLocation] = useState({
@@ -87,7 +88,7 @@ export default function App() {
               <CurrentWeatherCard location={location} weather={weather} />
               <WeatherDetailsGrid weather={weather} units={units} />
               {/* <DailyForecast weather={weather} /> */}
-              <DailyForecast weather={weather} />
+              <Dailyforecast weather={weather} />
             </div>
 
             <div className="lg:col-span-1">
