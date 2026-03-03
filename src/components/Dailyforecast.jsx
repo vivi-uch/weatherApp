@@ -1,6 +1,6 @@
 import WeatherIcon from "./WeatherIcon";
 
-export default function DailyForecast({ weather }) {
+export default function Dailyforecast({ weather }) {
   const daily = weather.daily;
   return (
     <div>
